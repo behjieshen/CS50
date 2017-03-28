@@ -1,0 +1,45 @@
+0.  BMP : 24 bits per pixel
+    GIF : 8 bits per pixels
+    JPEG : 24 bits per colured pixels, more than 26 million colors
+    PNG : 24 bits per colured pizels
+    
+1.  GIF
+
+2.  Lossy compression losses some data permanently after compression, it is normally used in sound/video.
+    Lossless compression keeps its data even after decompression.
+		
+3.  JPEG
+
+4.  The reference to the data on the disk are deleted from the file allocation table. However, the file's data is not modified or removed.
+
+5.  Replace all the data with zeros or random data.
+
+6.  stdint.h is a header file to let programmers use predefined typedefs for efficiency.
+
+7.  They predefined data types that is used to store values that are different than the generic data types.
+
+8.  BYTE is 1 byte.
+    DWORD is 4 bytes.
+    LONG is 4 bytes.
+    WORD is 2 bytes.
+    
+9. bfType
+
+10.  bfSize is the total number of bytes for the entiew bitmap, which includes the sizes of the header files.
+    biSize is the number of bytes in the BITMAPINFOHEADER header file.
+    
+11. It means that the image is top-down and its origin point is at the top left corner.
+
+12. biBitCount
+
+13. If an error occurs such as no such file is found, in a wrong directory etc
+
+14. It specifies how many of the same elements the user want to read.
+
+15. 3
+
+16. It moves to a specified position in an opened file.
+
+17. SEEK_CUR is a constant value defined in stdio.h, which means "Seek from the current location" of an opened file.
+
+18. Rick Astley.

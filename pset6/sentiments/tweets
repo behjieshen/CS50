@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+
+# TODO
+#!/usr/bin/env python3
+
+import os
+import sys
+import nltk
+
+from analyzer import Analyzer
+from termcolor import colored
+from helpers import get_user_timeline
+
+def main():
+
+    # ensure proper usage
+    if len(sys.argv) != 2:
+        sys.exit("Usage: ./tweets @screen_name")
+
+    # absolute paths to lists
+    positives = os.path.join(sys.path[0], "positive-words.txt")
+    negatives = os.path.join(sys.path[0], "negative-words.txt")
+    
+    # instantiate analyzer
+    analyzer = Analyzer(positives, negatives)
+    
+    user_handle = sys.argv[1].strip("@")
+    tweets = get_user_timeline(user_handle, 50)
+    if tweets == None:
+        sys.exit("Error")  
+
+    # analyze word
+    for j in range(len(tweets)):
+        score = analyzer.analyze(tweets[j])
+        if score > 0.0:
+            print(colored("1 {}", "green").format(tweets[j]))
+        elif score < 0.0:
+            print(colored("-1 {}", "red").format(tweets[j]))
+        else:
+            print(colored("0 {}", "yellow").format(tweets[j]))
+
+if __name__ == "__main__":
+    main()
